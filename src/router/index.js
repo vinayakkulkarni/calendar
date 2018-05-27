@@ -8,24 +8,23 @@ Vue.use(Router);
 
 const routes = [
   {
-    path: '/',
+    path: process.env.NODE_ENV === 'production' ? '/Calendar' : '/',
     name: 'Calendar',
     component: Calendar,
   },
   {
-    path: '/create',
+    path: process.env.NODE_ENV === 'production' ? '/Calendar/create' : '/create',
     name: 'CreateEvent',
     component: Create,
   },
   {
-    path: '/:id/edit',
+    path: process.env.NODE_ENV === 'production' ? '/Calendar/:id/edit' : '/:id/edit',
     name: 'EditEvent',
     component: Edit,
   },
 ];
 
 export default new Router({
-  base: process.env.ROUTER_BASE,
   mode: 'history',
   routes,
 });
