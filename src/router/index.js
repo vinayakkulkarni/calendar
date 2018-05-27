@@ -25,6 +25,7 @@ const routes = [
 ];
 
 export default new Router({
+  base: process.env.ROUTER_BASE,
   mode: 'history',
   routes,
 });
